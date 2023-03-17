@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+body{
+    background:linear-gradient(to right,#3f5efb,#fc466b);
+}
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+/*////////////////////////////*/
+.container1{
+    width: 1280px;
+    margin:70px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+}
+.container1 .box{
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background-color: black;
+    margin: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 100px;
+    margin-left: 100px;
+    box-shadow: 16px 14px 20px #0000008c;
+
+    
+}
+.container1 .box .imagebox{
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.container1 .box .imagebox img{
+  max-width: 100%;
+  transition: transform 2s;
+  height: 300px;
+  width: 300px;
+}
+.container1 .box:hover .imagebox img{
+    transform: scaleY(1.1);
+   
+}
+.container1 .box .detail{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: rgba(17, 17, 17, 0.532);
+    transform: scaleY(0);
+    transition: transform .5s;
+    border-radius: 50%;
+}
+.container1 .box:hover .detail{
+    transform: scaleY(1);
+}
+.container1 .box .detail .name{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    padding: 15px;
+    color: aliceblue;
+}
+.name p{
+    margin: 20px;
+}
+.name h4{
+    margin-top: 10px;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+}
+/*slider///////////////////*/
+.mySlides {display: none}
+img {vertical-align: middle;
+height: 400px;
+width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*galerry////////////////////////*/
+.content img{
+    height: 400px;
+    width: 400px;
+ }
+.container{
+    margin-left: 5rem;
+    margin-top: 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+.content{
+    width: 400px;
+    margin: 20px;
+    box-shadow: -3px -3px 2px rgba(225,225,225,0.3),
+                5px 5px 5px rgba(0,0,0,0.2),
+                15px 15px 15px rgba(0,0,0,0.2);
+   
+}
+.name{
+  text-align: center;
+  margin: 10px;
+ 
+}
+.content:hover{
+    color:red;
+    border-radius: 50px;
+    transform: scale(1.03);
+    transition: all 1s ease;
+   }
+   .jpg img{
+    height: 300px;
+    width: 300px;
+    margin-top: -5rem;
+    margin-left: 5rem;
+}
+.jpg {
+    height: 100px;
+    width: 300px;
+}
+.png img{
+    height: 200px;
+    width: 200px;
+    float: right;
+    margin-top: -7rem;
+    margin-right :5rem;
+}
+button{
+    padding: 0.8em; 
+    color: #fff; 
+    border: none; 
+    outline: none; 
+    font-size: 1.2rem;
+    font-family: 'Josefin sans', ;
+    background-color: hsl(143, 93%, 39%);
+    cursor: pointer;
+    margin-top: 1em; 
+}
+button:first-of-type:hover{
+    background-color: hsl(143, 98%, 30%);
+}
+button:last-of-type{
+    background-color: hsl(204, 93%, 39%) ;
+}
+button:last-of-type:hover{
+    background-color: hsl(204, 98%, 30%) ;
+}
+
+button+button{
+    margin-left: 2rem; 
+}
+main{
+    width: 60%;
+    margin: 2em auto; 
+    line-height: 1.8;
+    outline: 1px solid #c2c2c2;
+    padding: 2em; 
+}
+footer p{
+    padding:0;
+    font-size: 0.8em;
+    color: hsla(0, 50%, 100%, 0.35);
+    margin: 1em 0;
+    font-size: 1rem;
+}
+footer ul{
+    list-style: none;
+    display: flex;
+    margin: 1em 0; 
+}
+footer ul li a{
+    padding: 1em; 
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.904);
+    transition: 100ms;
+}
+footer ul li a:hover{
+    color: var(--primary);
+}
+
+footer{
+    width: 100%;
+    background: #180041;
+    color: #fff; 
+    display: grid;
+    place-items: center;
+    padding: 2em; 
+    font-size: 1.2rem;
+}
+
+
+
+/* Sticky Footer Styling */
+body{
+    min-height: 100vh;
+}
+.sticky-footer{
+    position: sticky;
+    top: 100%;
+}
